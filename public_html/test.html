@@ -1,0 +1,183 @@
+<!-- Based on code by Lev Leontev from the first sprint. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Tests</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin: 1rem;
+      font-size: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 1rem;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .pass {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .fail {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .icon {
+      margin-right: 0.5rem;
+    }
+
+    .message {
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      color: #721c24;
+    }
+
+    .test-file {
+      margin-bottom: 0.4rem;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    .test-file-name {
+      font-weight: bold;
+    }
+
+    .test-file-summary {
+      margin-left: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .test-file-summary-pass {
+      color: #155724;
+    }
+
+    .test-file-summary-fail {
+      color: #721c24;
+    }
+
+    .test-file-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .test-file-header-arrow {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .test-file-header-arrow-down:before {
+      content: '▼';
+    }
+
+    .test-file-header-arrow-up:before {
+      content: '▲';
+    }
+
+    .test-file-tests {
+      margin-left: 1rem;
+      display: block;
+    }
+
+    .test-file-tests li {
+      margin-bottom: 0.25rem;
+      padding: 0.25rem;
+      border-radius: 0.25rem;
+    }
+
+    .test-file-tests li.pass {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .test-file-tests li.fail {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+<h1>JavaScript Tests</h1>
+<ul id="test-results"></ul>
+<script src="javascriptFiles/instructions.js"></script>
+<script src="javascriptFiles/Assembler.js"></script>
+<script src="javascriptFiles/test/Test.js"></script>
+<script src="javascriptFiles/test/Assembler.test.js"></script>
+<script>
+
+  const testModules = [
+    { name: 'Assembler', module: assemblerTests },
+  ];
+
+  const allTestResults = testModules.flatMap(({ name, module }) => {
+    const testResults = runTestsInModule(module);
+    const numPass = testResults.filter(test => test.status === 'pass').length;
+    const numFail = testResults.filter(test => test.status === 'fail').length;
+    return { name, numPass, numFail, testResults };
+  });
+  const testResultsList = document.getElementById('test-results');
+  for (const { name, numPass, numFail, testResults } of allTestResults) {
+    const listItem = document.createElement('li');
+    const testFile = document.createElement('div');
+    const testFileHeader = document.createElement('div');
+    const testFileHeaderArrow = document.createElement('span');
+    const testFileSummary = document.createElement('div');
+    const testFileTests = document.createElement('ul');
+    testFile.classList.add('test-file');
+    testFileHeader.classList.add('test-file-header');
+    testFileHeaderArrow.classList.add('test-file-header-arrow');
+    testFileSummary.classList.add('test-file-summary');
+    testFileTests.classList.add('test-file-tests');
+    testFileHeader.addEventListener('click', () => {
+      testFileTests.style.display = testFileTests.style.display === 'none' ? 'block' : 'none';
+      testFileHeaderArrow.classList.toggle('test-file-header-arrow-down');
+      testFileHeaderArrow.classList.toggle('test-file-header-arrow-up');
+    });
+    testFileHeaderArrow.classList.add('test-file-header-arrow-down');
+    testFileHeader.appendChild(testFileHeaderArrow);
+    testFileHeader.appendChild(document.createTextNode(name));
+    testFileSummary.appendChild(document.createTextNode(`${numPass} passed, ${numFail} failed`));
+    testFileSummary.classList.add(numFail === 0 ? 'test-file-summary-pass' : 'test-file-summary-fail');
+    testFileHeader.appendChild(testFileSummary);
+    testFile.appendChild(testFileHeader);
+    for (const test of testResults) {
+      const listItem = document.createElement('li');
+      const statusIcon = document.createElement('span');
+      statusIcon.classList.add('icon');
+      statusIcon.innerHTML = test.status === 'pass' ? '✅' : '❌';
+      listItem.classList.add(test.status);
+      listItem.appendChild(statusIcon);
+      listItem.appendChild(document.createTextNode(` ${test.name}`));
+      if (test.status === 'fail') {
+        const message = document.createElement('p');
+        message.classList.add('message');
+        message.textContent = test.message;
+        listItem.appendChild(message);
+      }
+      testFileTests.appendChild(listItem);
+    }
+    testFile.appendChild(testFileTests);
+    listItem.appendChild(testFile);
+    testResultsList.appendChild(listItem);
+  }
+</script>
+</body>
+</html>
