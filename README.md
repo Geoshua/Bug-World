@@ -1,49 +1,6 @@
 # README
 This is an implementation of the game using HTML, CSS, and Javascript. This project's purpose is to implement an assembler to parse bug instructions, a GUI for the simulator, and the actual simulator itself ability to upload them and pasrse through client side.
-
-# Sprint 1 Progess
-
-1. Created welcome page <br>
-2. Created simulator page <br>
-3. quit button on simulator page takes you back to welcome page <br>
-4. Partially implemented `World` class <br>
-5. Implemented `Cell` class <br>
-6. Partially implemented `Bug` class <br>
-7. Partially implemented `GUI` class <br>
-8. Implemented ability to upload files and parse them all on the client-side <br>
-9. Mostly implemented parsing of world map file which displays output of client side<br>
-10. Created settings page, homepage, change settings page, and quit game page <br>
-11. Documentation Comments for each function file class that was implemented <br>
-12. Added test cases for errors and succesful <br>
-13. Made a pdf file to explain all the progess <br>
-14. There is also a display of bugs which move around only for display purposes yet to work on bug assembler code<br>
-
-# Sprint 2 Progress
-
-# Link
-[http://clabsql.clamv.jacobs-university.de/~lleontev/](http://clabsql.clamv.jacobs-university.de/~lleontev/)
-
-## A. Feature tests
-1. Implemented Assembler in [Assembler.js](public_html/javascriptFiles/Assembler.js).
-2. Implemented class World in [World.js](public_html/javascriptFiles/classes/World.js).
-
-## B. Unit testing
-1. Implemented [Assembler.test.js](public_html/javascriptFiles/test/Assembler.test.js).
-2. Implemented [World.test.js](public_html/javascriptFiles/test/World.test.js).
-3. Implemented [Cell.test.js](public_html/javascriptFiles/test/Cell.test.js).
-4. Implemented [Bug.test.js](public_html/javascriptFiles/test/Bug.test.js).
-## C. GUI
-Implemented UI for tests.
-![tests](readme_images/welcome.png)
-![tests](readme_images/test.png)
-
-## D. Documentation
-The new code is documented with comments.
-
-## E. Visual
-Fixed the poor formatting of the previous team in [93e414a3](https://github.com/CU-Software-Engineering-2023/pair34_sprint2/commit/93e414a3d98943837cc80f561fa434c535c5024f)
-
-# Sprint 3 Progress
+# Sprint 3 Progress ( Latest )
 
 # Link
 [http://clabsql.clamv.jacobs-university.de/~lliadov](http://clabsql.clamv.jacobs-university.de/~lliadov)
@@ -89,4 +46,47 @@ If all files are provided accordingly you should get something like this:
 3. Fully working stats menu, log function not integrated yet.
 4. Other Instructions for bug assembler implemented and working for the bug.
 5. Better documentation since the original code we got was very messy, we didn't know how things worked together and what each piece of code did.
+# Sprint 1 Progess
+
+1. Created welcome page <br>
+2. Created simulator page <br>
+3. quit button on simulator page takes you back to welcome page <br>
+4. Partially implemented `World` class <br>
+5. Implemented `Cell` class <br>
+6. Partially implemented `Bug` class <br>
+7. Partially implemented `GUI` class <br>
+8. Implemented ability to upload files and parse them all on the client-side <br>
+9. Mostly implemented parsing of world map file which displays output of client side<br>
+10. Created settings page, homepage, change settings page, and quit game page <br>
+11. Documentation Comments for each function file class that was implemented <br>
+12. Added test cases for errors and succesful <br>
+13. Made a pdf file to explain all the progess <br>
+14. There is also a display of bugs which move around only for display purposes yet to work on bug assembler code<br>
+
+# Sprint 2 Progress
+
+# Link
+[http://clabsql.clamv.jacobs-university.de/~lleontev/](http://clabsql.clamv.jacobs-university.de/~lleontev/)
+
+## A. Feature tests
+1. Implemented Assembler in [Assembler.js](public_html/javascriptFiles/Assembler.js).
+2. Implemented class World in [World.js](public_html/javascriptFiles/classes/World.js).
+
+## B. Unit testing
+1. Implemented [Assembler.test.js](public_html/javascriptFiles/test/Assembler.test.js).
+2. Implemented [World.test.js](public_html/javascriptFiles/test/World.test.js).
+3. Implemented [Cell.test.js](public_html/javascriptFiles/test/Cell.test.js).
+4. Implemented [Bug.test.js](public_html/javascriptFiles/test/Bug.test.js).
+## C. GUI
+Implemented UI for tests.
+![tests](readme_images/welcome.png)
+![tests](readme_images/test.png)
+
+## D. Documentation
+The new code is documented with comments.
+
+## E. Visual
+Fixed the poor formatting of the previous team in [93e414a3](https://github.com/CU-Software-Engineering-2023/pair34_sprint2/commit/93e414a3d98943837cc80f561fa434c535c5024f)
+
+
 
