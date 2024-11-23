@@ -2,9 +2,6 @@
 This is an implementation of the game using HTML, CSS, and Javascript. This project's purpose is to implement an assembler to parse bug instructions, a GUI for the simulator, and the actual simulator itself ability to upload them and pasrse through client side.
 # Sprint 3 Progress ( Latest )
 
-# Link
-[http://clabsql.clamv.jacobs-university.de/~lliadov](http://clabsql.clamv.jacobs-university.de/~lliadov)
-
 # Summary
 To make a long story short, before that moment everything was absolutely in a very sad state - the bug field was not square, although obviously it should be hexagonal. The bugs moved on their own and did not correspond to the squares in any way. The assembly code was mostly invalid. I don't know how the previous sprinters got more than zero points for this creation, but so be it. The visuals were completely fixed - the resolution of the pictures just didn't allow them to be displayed properly. The field sprites have been fixed, brought into hexagonal form. The logic of the bugs and ensuring that they move according to the field cells has been changed. Assembly code handling and implementation of several commands was added, for example. The position of the field on the screen has been changed slightly, making it more pleasing to the viewer.
 
@@ -64,9 +61,6 @@ If all files are provided accordingly you should get something like this:
 14. There is also a display of bugs which move around only for display purposes yet to work on bug assembler code<br>
 
 # Sprint 2 Progress
-
-# Link
-[http://clabsql.clamv.jacobs-university.de/~lleontev/](http://clabsql.clamv.jacobs-university.de/~lleontev/)
 
 ## A. Feature tests
 1. Implemented Assembler in [Assembler.js](public_html/javascriptFiles/Assembler.js).
