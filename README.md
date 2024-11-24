@@ -1,5 +1,6 @@
 # README
-This is an implementation of the game using HTML, CSS, and Javascript. This project's purpose is to implement an assembler to parse bug instructions, a GUI for the simulator, and the actual simulator itself ability to upload them and pasrse through client side.
+This is an implementation of a Client Side Simulation Game Engine using HTML, CSS, and Javascript. This project's purpose is to implement an assembler to parse bug instructions, a GUI for the simulator, and the actual simulator itself ability to upload them and pasrse through client side.
+The Project was originally done in sprints and will be continued when there is free time.
 # Sprint 3 Progress ( Latest )
 
 # Summary
